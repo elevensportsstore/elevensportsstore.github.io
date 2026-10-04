@@ -290,7 +290,7 @@ function render() {
     const heroSub = $('hero-sub');
     if (heroSub) {
         if (f.clubs.size === 1) heroSub.textContent = [f.league, [...f.clubs][0]].filter(Boolean).join(' · ');
-        else if (f.clubs.size > 1) heroSub.textContent = [f.league, f.clubs.size + ' გუნდი'].filter(Boolean).join(' · ');
+        else if (f.clubs.size > 1) heroSub.textContent = [f.league, f.clubs.size + ' კლუბი'].filter(Boolean).join(' · ');
         else if (f.league) heroSub.textContent = f.league;
         else heroSub.textContent = '';
     }
@@ -298,7 +298,7 @@ function render() {
     const titleParts = [];
     if (f.league) titleParts.push(f.league);
     if (f.clubs.size === 1) titleParts.push([...f.clubs][0]);
-    else if (f.clubs.size > 1) titleParts.push(f.clubs.size + ' გუნდი');
+    else if (f.clubs.size > 1) titleParts.push(f.clubs.size + ' კლუბი');
     $('result-count').textContent = `${titleParts.length ? titleParts.join(' · ') : 'ყველა პროდუქტი'} (${list.length})`;
 
     const scopeProducts = products.filter(p => !f.league || p.league === f.league);
@@ -342,7 +342,7 @@ function render() {
     const selectedIn = list => list.filter(c => f.clubs.has(c)).length;
 
     if (teamClubs.length && f.league !== NAT_LEAGUE) {
-        filtersHTML += fSection('club', 'გუნდი', selectedIn(teamClubs), clubChecks(teamClubs));
+        filtersHTML += fSection('club', 'კლუბი', selectedIn(teamClubs), clubChecks(teamClubs));
     }
 
     if (nationClubs.length && (!f.league || f.league === NAT_LEAGUE)) {

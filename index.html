@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ELEVEN — საფეხბურთო მაისურები კლუბების მიხედვით">
+    <title>ELEVEN — Sports Store</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Noto+Sans+Georgian:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo"><img src="logo.png" alt="" class="logo-img">ELEVEN SPORTS</a>
+            <input id="search" type="search" placeholder="მოძებნე პროდუქტი..." aria-label="ძებნა">
+            <div class="nav-actions">
+                <button class="nav-btn" data-fav-open aria-label="ფავორიტები">
+                    <svg class="heart-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span id="fav-count" class="cart-count-badge" hidden>0</span>
+                </button>
+        <button class="cart-badge" onclick="toggleCartModal()" aria-label="კალათის გახსნა">
+                <svg class="cart-icon" viewBox="0 0 1200 1200" aria-hidden="true">
+                    <path fill="currentColor" d="m949 392h-135.93c-9.2617-125.26-101.21-224-213.07-224-111.88 0-203.82 98.746-213.09 224h-135.91l-72 640h841.99zm-349-189.57c95.258 0 173.83 83.305 182.98 189.57h-365.96c9.1562-106.27 87.719-189.57 182.99-189.57zm-8.2695 540.89c-118.01 0-214.01-98.699-214.01-220h30.098c0 104.24 82.512 189.06 183.91 189.06 101.39 0 183.9-84.816 183.9-189.06h30.098c0 121.31-96 220-214 220z"/>
+                </svg>
+                <span id="cart-count" class="cart-count-badge" hidden>0</span>
+            </button>
+                <button class="nav-btn" id="acc-btn" data-acc-open aria-label="პირადი კაბინეტი">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+                </button>
+            </div>
+        </div>
+        <nav class="club-nav" id="club-nav" aria-label="ლიგები">
+    <div class="container club-list">
+        <a href="/" data-league="" class="active">ყველა</a>
+        <a href="#league=%E1%83%9E%E1%83%A0%E1%83%94%E1%83%9B%E1%83%98%E1%83%94%E1%83%A0%20%E1%83%9A%E1%83%98%E1%83%92%E1%83%90" data-league="პრემიერ ლიგა">პრემიერ ლიგა</a>
+        <a href="#league=%E1%83%9A%E1%83%90%20%E1%83%9A%E1%83%98%E1%83%92%E1%83%90" data-league="ლა ლიგა">ლა ლიგა</a>
+        <a href="#league=%E1%83%9A%E1%83%98%E1%83%92%E1%83%90%201" data-league="ლიგა 1">ლიგა 1</a>
+        <a href="#league=%E1%83%A1%E1%83%94%E1%83%A0%E1%83%98%E1%83%90%20A" data-league="სერია A">სერია A</a>
+        <a href="#league=%E1%83%91%E1%83%A3%E1%83%9C%E1%83%93%E1%83%94%E1%83%A1%E1%83%9A%E1%83%98%E1%83%92%E1%83%90" data-league="ბუნდესლიგა">ბუნდესლიგა</a>
+        <a href="#league=%E1%83%A1%E1%83%AE%E1%83%95%E1%83%90%20%E1%83%9A%E1%83%98%E1%83%92%E1%83%94%E1%83%91%E1%83%98" data-league="სხვა ლიგები">სხვა ლიგები</a>
+        <a href="#league=%E1%83%94%E1%83%A0%E1%83%9D%E1%83%95%E1%83%9C%E1%83%A3%E1%83%9A%E1%83%98%20%E1%83%9C%E1%83%90%E1%83%99%E1%83%A0%E1%83%94%E1%83%91%E1%83%94%E1%83%91%E1%83%98" data-league="ეროვნული ნაკრები">ეროვნული ნაკრები</a>
+    </div>
+</nav>
+    </header>
+
+    <div id="shop-view">
+        <section class="hero" id="hero">
+            <span class="hero-number" aria-hidden="true">11</span>
+            <div class="container hero-content">
+                <h1 id="hero-title">ᲡᲐᲣᲙᲔᲗᲔᲡᲝ<br>ᲝᲜᲚᲐᲘᲜ ᲛᲐᲦᲐᲖᲘᲐ<br>ᲡᲐᲥᲐᲠᲗᲕᲔᲚᲝᲨᲘ</h1>
+            </div>
+        </section>
+
+        <main class="container" id="shop">
+            <div class="toolbar">
+                <span id="result-count" class="section-title">პროდუქცია</span>
+                <div class="toolbar-right">
+                    <button class="filter-toggle" id="filter-toggle">ფილტრი</button>
+                    <select id="sort" aria-label="სორტირება">
+                        <option value="">სორტირება</option>
+                        <option value="asc">ფასი: იაფიდან ძვირისკენ</option>
+                        <option value="desc">ფასი: ძვირიდან იაფისკენ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="shop">
+                <aside class="filters" id="filters"></aside>
+                <div id="products-container" class="products-grid">
+                    <p class="loading-text">პროდუქტები იტვირთება...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="product-view" hidden></div>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>შენი კალათა</h3>
+                <button class="close-btn" onclick="toggleCartModal()" aria-label="დახურვა">&times;</button>
+            </div>
+            <ul id="cart-items-list" class="cart-items"></ul>
+            <div class="cart-footer">
+                <div class="cart-total-text">
+                    <span>სულ ჯამი</span>
+                    <strong><span id="modal-cart-total">0</span> ₾</strong>
+                </div>
+                <button class="checkout-btn cart-clear" data-cart-clear hidden>კალათის გასუფთავება</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 ELEVEN SPORTS. ყველა უფლება დაცულია.</p>
+        </div>
+    </footer>
+
+    <button id="to-top" class="to-top" data-top aria-label="ზემოთ ასვლა">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>

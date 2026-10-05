@@ -940,7 +940,7 @@ const closeDrawers = () => document.querySelectorAll('#fav-modal, #acc-modal').f
    OTP იგზავნება Google Apps Script-ით. კოდი მოქმედებს 3 წუთი. */
 const ACC_KEY = 'eleven-acc-v1';
 const SES_KEY = 'eleven-session-v1';
-const SCRIPT_URL = 'აქ_ჩასვი_შენი_WEB_APP_URL'; // ← აქ ჩასვი Apps Script-ის Web App URL
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzESpz495-y-GrqYj0VmyTElnE2ImDNmmGoRude7OxXNfHLVpssCwi1okPXnPAtoD0a/exec'; // ← აქ ჩასვი Apps Script-ის Web App URL
 
 let accounts = readLS(ACC_KEY, []);
 let session = readLS(SES_KEY, null);
